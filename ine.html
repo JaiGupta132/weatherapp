@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css">
-    <title>Image Slider</title>
-  </head>
-  <body>
-    <div id="slideContainer">
-      <button id='prev' class="sliderBtn">&lt;
-          <button id="next" class="sliderBtn">&gt;</button>
-      </button>
-      <div class="slide show">
-        <img src="./img/slide1.jpg" alt="slide1" />
-        <p>Slide No. 1</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centered Image Slider</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+</head>
+<body>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Wonder Woman" />
       </div>
-      <div class="slide">
-        <img src="./img/slide2.jpg" alt="slide2" />
-        <p>Slide No. 2</p>
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w500/f9ZAIUxTTk23vo1BC9Ur1Rx5c2E.jpg" alt="Justice League" />
       </div>
-      <div class="slide">
-        <img src="./img/slide3.jpg" alt="slide3" />
-        <p>Slide No. 3</p>
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w500/9z256FFPDsL7kSVJ9oyLELaN1ph.jpg" alt="Spider-Man" />
       </div>
-      <div class="slide">
-        <img src="./img/slide4.jpg" alt="slide4" />
-        <p>Slide No. 4</p>
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg" alt="Suicide Squad" />
       </div>
-      <div class="slide">
-        <img src="./img/slide5.jpg" alt="slide5" />
-        <p>Slide No. 5</p>
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w500/tDexQyu6FWltcd0VhEDK7uib42f.jpg" alt="Peacemaker" />
       </div>
-      <div class="slide">
-        <img src="./img/slide6.jpg" alt="slide6" />
-        <p>Slide No. 6</p>
+      <div class="swiper-slide">
+        <img src="https://images.indianexpress.com/2018/04/avengers-captain-america.jpg" alt="Avengers" />
       </div>
-      <div class="slide">
-        <img src="./img/slide6.jpg" alt="slide6" />
-        <p>Slide No. 7</p>
-      </div>
-      <div class="slide">
-        <img src="./img/slide4.jpg" alt="slide4" />
-        <p>Slide No. 8</p>
+      <div class="swiper-slide">
+        <img src="https://image.tmdb.org/t/p/w500/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg" alt="Thor Ragnarok" />
       </div>
     </div>
-    <script src='script.js'></script>
-  </body>
+
+    <!-- Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      slidesPerView: 1,
+      centeredSlides: true,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
 </html>
